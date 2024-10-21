@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Pusher from "pusher-js";
 
 function App() {
-  const apiURL = process.env.NESTJS_APP_BACKEND || 'http://localhost:8000/api/'
+  const apiURL = (process.env.NESTJS_APP_BACKEND || 'http://localhost:8000') + '/api/'
   const [username, setUsername] = useState("username");
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
