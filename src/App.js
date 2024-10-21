@@ -3,14 +3,12 @@ import { useEffect, useState } from "react";
 import Pusher from "pusher-js";
 
 function App() {
-  const apiURL = (process.env.NESTJS_APP_BACKEND || 'http://localhost:8000') + '/api/'
+  const apiURL = process.env.REACT_APP_NESTJS_APP_BACKEND +'/api/' 
   const [username, setUsername] = useState("username");
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
   
   useEffect(() => {
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
     
     const pusher = new Pusher('ab3de070f05de881bc75', {
       cluster: 'ap2'
